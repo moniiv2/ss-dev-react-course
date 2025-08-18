@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      let socks = 10;
+      let tshirt = 8;
+      let productCost = socks + tshirt * 2;
+      let shippingCost = 5;
+      let totalCost = productCost + shippingCost;
+
+      let date = dayjs().format('MMMM D');
+      const div = (
+        <div>
+          <p>Today is {date}</p>
+
+          <p>Product Cost: ${productCost}</p>
+          <p>Shipping Cost: ${shippingCost}</p>
+          <p>Total Cost: ${totalCost}</p>
+          <button>Place your order</button>
+        </div>
+      );
+
+      function ProductDetails({ product, price, dprice }) {
+        return (
+          <>
+            {dprice && (
+              <>
+                <p>{product}</p>
+                <del>
+                  <p>Price: {price}</p>
+                </del>
+                <p>Discount price: {dprice}</p>
+                <button>Add To Cart</button>
+              </>
+            )}
+
+            {!dprice && (
+              <>
+                <p>{product}</p>
+                <p>Price: {price}</p>
+                <button>Add To Cart</button>
+              </>
+            )}
+          </>
+        );
+      }
+
+      function App() {
+        return (
+          <>
+            <ProductDetails
+              product='cotton socks'
+              price='$10.90'
+              dprice='$5.45'
+            />
+            <ProductDetails product='tennis balls' price='$6.00' />
+            <ProductDetails product='Plain T-Shirt' price='$7.99' />
+          </>
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
