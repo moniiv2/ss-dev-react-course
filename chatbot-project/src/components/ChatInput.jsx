@@ -18,7 +18,7 @@ export function ChatInput({ chatMessages, setChatMessages }) {
         id: crypto.randomUUID(),
       },
       {
-        message: <img src={Loader} height='40px' margin='15px' />,
+        message: <img src={Loader} className='h-[40px]' />,
         sender: 'robot',
         id: crypto.randomUUID(),
       },

@@ -29,7 +29,7 @@
 .chat-input-container {
   display: flex;
   margin-bottom: 50px;
-} */
+} 
 .app-container {
   max-width: 600px;
   margin-left: auto;
@@ -46,7 +46,7 @@
 .chat-message-robot {
   display: flex;
   align-items: start;
-}
+} 
 .chat-message-text {
   background-color: rgb(238, 238, 238);
   padding: 15px 20px;
@@ -55,6 +55,11 @@
   margin-left: 10px;
   margin-bottom: 20px;
   max-width: 300px;
+}
+.chat-time {
+  color: grey;
+  font-size: 12px;
+  margin-bottom: 0;
 }
 .chat-message-profile {
   width: 45px;
@@ -70,9 +75,4 @@
   color: grey;
   text-align: center;
   font-size: 15px;
-}
-.chat-time {
-  color: grey;
-  font-size: 12px;
-  margin-bottom: 0;
-}
+}*/
