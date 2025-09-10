@@ -22,7 +22,7 @@ function App() {
   function displayMessages() {
     if (chatMessages.length === 0) {
       return (
-        <p className='text-gray-400 text-center text-sm'>
+        <p className='text-gray-400 text-center text-md'>
           Welcome to the chatbot project! Send a message using the textbox below
         </p>
       );

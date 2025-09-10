@@ -3,6 +3,17 @@ import { products } from '../../starting-code/data/products.js';
 import './HomePage.css';
 
 function HomePage() {
+  fetch('http://localhost:3000/api/products')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+  //this is a promise, which is an async operation which means it will take some time to complete
+  //we use .then to wait for the promise to complete and then we can use the data
+  //we can also use async/await to make the code more readable
+
   return (
     <>
       <title>Ecommerce Project</title>
