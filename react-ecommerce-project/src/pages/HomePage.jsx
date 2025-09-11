@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Header from '../components/Header.jsx';
-import { products } from '../../starting-code/data/products.js';
 import './HomePage.css';
+import { useEffect, useState } from 'react';
 
 function HomePage() {
   /* fetch('http://localhost:3000/api/products')
@@ -15,9 +15,14 @@ function HomePage() {
   //we use .then to wait for the promise to complete and then we can use the data
   //we can also use async/await to make the code more readable
 
-  axios.get('http://localhost:3000/api/products').then((response) => {
-    console.log(response.data);
-  });
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/products').then((response) => {
+      setProducts(response.data);
+    });
+  }, []);
+
   //axios is a cleaner way to get data from a backend
 
   return (
