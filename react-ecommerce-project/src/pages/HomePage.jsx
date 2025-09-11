@@ -10,16 +10,22 @@ function HomePage() {
     })
     .then((data) => {
       console.log(data);
-  }); */
+  }); 
   //this is a promise, which is an async operation which means it will take some time to complete
   //we use .then to wait for the promise to complete and then we can use the data
   //we can also use async/await to make the code more readable
+  */
 
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/products').then((response) => {
       setProducts(response.data);
+    });
+
+    axios.get('http://localhost:300/api/cart-items').then((response) => {
+      setCart(response.data);
     });
   }, []);
 
@@ -29,7 +35,7 @@ function HomePage() {
     <>
       <title>Ecommerce Project</title>
 
-      <Header />
+      <Header cart={cart} />
 
       <div className='home-page'>
         <div className='products-grid'>
