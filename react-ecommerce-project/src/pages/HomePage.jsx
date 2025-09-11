@@ -3,7 +3,7 @@ import Header from '../components/Header.jsx';
 import './HomePage.css';
 import { useEffect, useState } from 'react';
 
-function HomePage() {
+function HomePage({ cart }) {
   /* fetch('http://localhost:3000/api/products')
     .then((response) => {
       return response.json();
@@ -17,15 +17,10 @@ function HomePage() {
   */
 
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     axios.get('/api/products').then((response) => {
       setProducts(response.data);
-    });
-
-    axios.get('/api/cart-items').then((response) => {
-      setCart(response.data);
     });
   }, []);
 
