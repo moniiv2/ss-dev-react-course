@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import DeliveryOptions from './deliveryOptions';
 import CartItemDetails from './CartItemDetails';
 
-function OrderSummary({ cart, deliveryOptions }) {
+function OrderSummary({ cart, deliveryOptions, loadCart }) {
   return (
     <>
       <div className='order-summary'>
@@ -28,6 +28,7 @@ function OrderSummary({ cart, deliveryOptions }) {
                   <DeliveryOptions
                     cartItem={cartItem}
                     deliveryOptions={deliveryOptions}
+                    loadCart={loadCart}
                   />
                 </div>
               </div>

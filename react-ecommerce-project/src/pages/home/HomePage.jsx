@@ -4,7 +4,7 @@ import './HomePage.css';
 import { useEffect, useState } from 'react';
 import ProductsGrid from './ProductsGrid.jsx';
 
-function HomePage({ cart }) {
+function HomePage({ cart, loadCart }) {
   /* fetch('http://localhost:3000/api/products')
     .then((response) => {
       return response.json();
@@ -36,7 +36,7 @@ function HomePage({ cart }) {
       <Header cart={cart} />
 
       <div className='home-page'>
-        <ProductsGrid products={products} />
+        <ProductsGrid products={products} loadCart={loadCart} />
       </div>
     </>
   );
