@@ -1,7 +1,15 @@
 import './Header.css';
 import { NavLink } from 'react-router';
 
-function Header({ cart }) {
+type HeaderProps = {
+  cart: {
+    productId: string;
+    quantity: number;
+    deliveryOptionId: string;
+  }[];
+};
+
+function Header({ cart }: HeaderProps) {
   let totalQuantity = 0;
   cart.forEach((cartItem) => {
     totalQuantity += cartItem.quantity;

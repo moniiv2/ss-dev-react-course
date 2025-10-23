@@ -1,4 +1,4 @@
-import Header from '../../components/Header.jsx';
+import Header from '../../components/Header.js';
 import './OrdersPage.css';
 import { Link } from 'react-router';
 import axios from 'axios';
